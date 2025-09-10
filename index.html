@@ -191,6 +191,7 @@ Proficient in Java, Python, HTML, CSS, JavaScript, MySQL, with strong skills in 
             </div>
         </div>
     </section>
+
     
 <section class="projects" id="projects">
   <div class="max-width">
@@ -212,7 +213,7 @@ Proficient in Java, Python, HTML, CSS, JavaScript, MySQL, with strong skills in 
 
       <div class="card">
         <div class="box">
-          <img src="images/image-.png" alt="E-Commerce">
+          <img src="images/ecom.png" alt="E-Commerce">
           <div class="text">E-Commerce Web Application (Flipkart Clone Lite)</div>
           <ul>
             <li>○ Technologies: Java, Spring Boot, React, MySQL, AWS</li>
@@ -327,28 +328,30 @@ Proficient in Java, Python, HTML, CSS, JavaScript, MySQL, with strong skills in 
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="text">Message me <i class="fas fa-paper-plane"></i></div>
-                    <form action="#" name="submit-to-google-sheet">
-                        <div class="fields">
-                            <div class="field name">
-                                <input type="text" name="Name" placeholder="Name" required>
-                            </div>
-                            <div class="field email">
-                                <input type="email" name="Email" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <input type="text" name="Subject" placeholder="subject" required>
-                        </div>
-                        <div class="field textarea">
-                            <textarea cols="30" rows="5" name="Message" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="button">
-                            <button type="submit">Send Message</button>
-                        </div>
-                    </form>
-                    <span id="msg"></span>
-                </div>
+                    <div class="column right">
+  <div class="text">Message me <i class="fas fa-paper-plane"></i></div>
+
+<form name="submit-to-google-sheet">
+  <div class="fields">
+    <div class="field name">
+      <input type="text" name="Name" placeholder="Name" required>
+    </div>
+    <div class="field email">
+      <input type="email" name="Email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="field">
+    <input type="text" name="Subject" placeholder="Subject" required>
+  </div>
+  <div class="field textarea">
+    <textarea cols="30" rows="5" name="Message" placeholder="Message" required></textarea>
+  </div>
+  <div class="button">
+    <button type="submit">Send Message</button>
+  </div>
+</form>
+
+<span id="msg"></span>
             </div>
         </div>
     </section>
@@ -376,5 +379,68 @@ Proficient in Java, Python, HTML, CSS, JavaScript, MySQL, with strong skills in 
       });
   });
 </script>
+
+<script>
+$(document).ready(function(){
+
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
+
+
+    $('.menu a').click(function(){
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 500);
+        $('.navbar .menu').removeClass("active");
+        $('.menu-btn i').removeClass("active");
+        return false;
+    });
+
+
+    $(window).scroll(function(){
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        } else {
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
+
+    $('.scroll-up-btn').click(function(){
+        $('html, body').animate({scrollTop: 0}, 500);
+    });
+
+
+    var typed1 = new Typed(".typing-1", {
+        strings: ["Freelancer", "Student", "Developer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    var typed2 = new Typed(".typing-2", {
+        strings: ["Full Stack Developer", "Problem Solver", "Tech Enthusiast"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+
+    $(".carousel").owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: true,
+        responsive:{
+            0:{ items:1, nav:false },
+            600:{ items:2, nav:false },
+            1000:{ items:3, nav:false }
+        }
+    });
+});
+</script>
+
 </body>
 </html>
